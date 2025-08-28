@@ -1,0 +1,44 @@
+name: Frontend CI/CD
+
+on:
+  push:
+    branches: ["main"] # run when you push to main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repo
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Step 2: Validate HTML (basic lint check)
+      - name: Validate HTML
+        uses: Cyb3r-Jak3/html5validator-action@v0.4.4
+        with:
+          root: "."
+
+      # Step 3: Build Docker image
+      - name: Build Docker Image
+        run: docker build -t kenzo0308/frontend:latest -f Dockerfile .
+
+      # Step 4: Push image to DockerHub
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Push Docker image
+        run: docker push yourdockerhubusername/frontend:latest
+
+      # Step 5: Deploy to Azure Static Web Apps
+      - name: Deploy to Azure Static Web Apps
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: "upload"
+          app_location: "/"
+          output_location: "/"

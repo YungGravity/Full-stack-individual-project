@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Next Level VR - Flyer</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1603484477859-abe6a73f9361?q=80&w=1500&auto=format&fit=crop') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2cm;
+  }
+
+  header {
+    text-align: center;
+  }
+  header h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+  }
+  header h2 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    color: #0ff;
+  }
+
+  main {
+    display: flex;
+    flex: 1;
+    margin-top: 1cm;
+    gap: 1cm;
+  }
+
+  .left, .right {
+    flex: 1;
+    padding: 1cm;
+    background: rgba(0,0,0,0.6);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .left img {
+    width: 100%;
+    border-radius: 15px;
+    transform: rotate(-2deg);
+    margin-bottom: 1rem;
+    box-shadow: 0 0 20px #0ff;
+  }
+
+  .left p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+
+  .right h3 {
+    font-size: 2rem;
+    color: #0ff;
+    margin-bottom: 1rem;
+  }
+
+  .right ul {
+    list-style: none;
+    font-size: 1.2rem;
+  }
+
+  .right li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+  }
+  .right li::before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    color: #0ff;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 1rem;
+    background: rgba(0,0,0,0.6);
+    padding: 0.5cm;
+    border-radius: 15px;
+    color: #0ff;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Next Level VR</h1>
+    <h2>Experience Worlds Beyond Imagination</h2>
+  </header>
+
+  <main>
+    <div class="left">
+      <img src="img/arcade.jpeg" alt="VR Experience">
+      <p>
+        Step into a world where the impossible becomes reality.  
+        From high-speed anti-gravity races to serene virtual gardens,  
+        our arcade offers cutting-edge VR adventures for all ages.
+      </p>
+    </div>
+    <div class="right">
+      <h3>Why Choose Us?</h3>
+      <ul>
+        <li>Latest VR Technology</li>
+        <li>Exclusive Multiplayer Games</li>
+        <li>Monthly New Content</li>
+        <li>Corporate & School Events</li>
+        <li>Family-Friendly Fun</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    📍 123 VR Street, Future City | ☎ 555-123-VRVR | 🌐 nextlevelvr.com
+  </footer>
+</body>
+</html>
