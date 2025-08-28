@@ -107,7 +107,7 @@ function render(list){
 }
 
 //Fetching games
-fetch("http://localhost:8000/get/games") // your Python API
+fetch("https://full-stack-individual-project-yunggravity-yunggravitys-projects.vercel.app/get/games") // your Python API
   .then(res => res.json())
   .then(data => {
   const games = data.games.map(row => ({
