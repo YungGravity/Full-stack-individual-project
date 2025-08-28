@@ -16,6 +16,10 @@ html,body{
   font-family:'Inter',system-ui,Segoe UI,Roboto,Arial,sans-serif;
 }
 
+iframe{
+  border: 0px;
+}
+
 a{
   color:var(--neon)
 }
